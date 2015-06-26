@@ -1,0 +1,20 @@
+{
+  "name": "unscripted-editor-web",
+  "version": "0.0.0",
+  "homepage": "https://github.com/greysonp/unscripted-editor-web",
+  "authors": [
+    "Greyson Parrelli <greyson.parrelli@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.4.1",
+    "angular-sanitize": "~1.4.1"
+  }
+}

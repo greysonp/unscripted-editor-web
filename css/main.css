@@ -1,0 +1,65 @@
+body, html {
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+}
+
+.container {
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.pane {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 100%;
+    padding: 0;
+    box-shadow: 0 0 5px 0 #aaa;
+    background-color: #fafafa;
+}
+
+.pane.left {
+
+}
+
+.pane.center {
+    margin: 0 20px;
+    background-color: #fff;
+    padding: 20px 30px;
+    font-size: 18px;
+    line-height: 35px;
+    font-family: 'Droid Serif';
+    width: 500px;
+}
+
+.pane.right {
+
+}
+
+.revision-list-item {
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 18px;
+    font-family: 'Droid Serif';
+    padding: 0 4px 4px 4px;
+    border: none;
+    border-radius: 0;
+    background: none;
+    border-bottom: 2px solid black;
+    position: relative;
+    top: 2px;
+    text-align: center;
+}
+
+select:focus {
+    outline: none;
+}
