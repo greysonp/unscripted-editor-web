@@ -44,6 +44,10 @@ body, html {
     padding: 20px;
 }
 
+.pane.center .option {
+    border-bottom: 2px solid #000;
+}
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;

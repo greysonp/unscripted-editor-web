@@ -8,12 +8,12 @@
     <body ng-app="UnscriptedEditor">
         <div class="container">
             <div class="pane left" ng-controller="RevisionController">
-                <span ng-repeat="revision in revisions">
-                    <uns-revision info="revision" click-listener="revisionClick(revision)"></uns-revision>
+                <span ng-repeat="(title, revision) in revisions">
+                    <uns-revision info="title" click-listener="revisionClick(title, revision)"></uns-revision>
                 </span>
             </div>
             <div class="pane center" ng-controller="EditorController">
-                <div ng-bind-html="revision | revision"></div>
+                <div ng-bind-html="revision | revisionToHtml"></div>
             </div>
             <div class="pane right">
                 <div>3</div>
@@ -34,6 +34,6 @@
         <script type="text/javascript" src="js/services/revisions.js"></script>
 
         <!-- Filters -->
-        <script type="text/javascript" src="js/filters/revision.js"></script>
+        <script type="text/javascript" src="js/filters/revisionToHtml.js"></script>
     </body>
 </html>
