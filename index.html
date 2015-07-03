@@ -1,39 +1,25 @@
 <html>
     <head>
-        <script type="text/javascript" src="bower_components/angularjs/angular.min.js"></script>
-        <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body ng-app="UnscriptedEditor">
+    <body>
         <div class="container">
-            <div class="pane left" ng-controller="RevisionController">
-                <span ng-repeat="(title, revision) in revisions">
-                    <uns-revision info="title" click-listener="revisionClick(title, revision)"></uns-revision>
-                </span>
-            </div>
-            <div class="pane center" ng-controller="EditorController">
-                <div ng-bind-html="revision | revisionToHtml"></div>
-            </div>
-            <div class="pane right">
-                <div>3</div>
-            </div>
+            <app></app>
         </div>
 
-        <!-- Modules -->
-        <script type="text/javascript" src="js/app.js"></script>
+        <!-- Libs -->
+        <script type="text/javascript" src="bower_components/riot/riot.min.js"></script>
+        
+        <!-- Tags -->
+        <script type="text/javascript" src="tags/all.js"></script>
 
-        <!-- Controllers -->
-        <script type="text/javascript" src="js/controllers/RevisionController.js"></script>
-        <script type="text/javascript" src="js/controllers/EditorController.js"></script>
+        <!-- Data -->
+        <script type="text/javascript" src="js/data.js"></script>
 
-        <!-- Directives -->
-        <script type="text/javascript" src="js/directives/unsRevision.js"></script>
-
-        <!-- Services -->
-        <script type="text/javascript" src="js/services/revisions.js"></script>
-
-        <!-- Filters -->
-        <script type="text/javascript" src="js/filters/revisionToHtml.js"></script>
+        <!-- Initialization -->
+        <script type="text/javascript">
+            riot.mount('*');
+        </script>
     </body>
 </html>

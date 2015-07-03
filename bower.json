@@ -14,7 +14,6 @@
     "tests"
   ],
   "dependencies": {
-    "angularjs": "~1.4.1",
-    "angular-sanitize": "~1.4.1"
+    "riot": "~2.2.1"
   }
 }

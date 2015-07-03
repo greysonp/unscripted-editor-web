@@ -13,6 +13,7 @@ body, html {
 
 .pane {
     position: relative;
+    text-align: left;
     float: left;
     width: 200px;
     height: 100%;

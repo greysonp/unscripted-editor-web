@@ -1,6 +1,7 @@
-app.factory('revisions', function() {
-    return {
-        "greyson-bangor": [
+var revisions = [
+    {
+        "title": "greyson-bangor",
+        "parts": [
             {
                 "type": "text",
                 "text": "There once was a "
@@ -40,7 +41,10 @@ app.factory('revisions', function() {
                 "text": ". It's a small town with not much to do, but it's home."
             }
         ],
-        "stephanie-bangor": [
+    },
+    {
+        "title": "stephanie-bangor",
+        "parts": [
             {
                 "type": "text",
                 "text": "There once was a "
@@ -79,8 +83,11 @@ app.factory('revisions', function() {
                 "type": "text",
                 "text": ". It's a small town with not much to do, but it's home."
             }
-        ],
-        "greyson-mountain-view": [
+        ]
+    },
+    {
+        "title": "greyson-mountain-view",
+        "parts": [
             {
                 "type": "text",
                 "text": "There once was a "
@@ -120,7 +127,10 @@ app.factory('revisions', function() {
                 "text": ". It's a city in the middle of Silicon Valley."
             }
         ],
-        "stephanie-la": [
+    },
+    {
+        "title": "stephanie-la",
+        "parts": [
             {
                 "type": "text",
                 "text": "There once was a "
@@ -160,5 +170,5 @@ app.factory('revisions', function() {
                 "text": ". It's the center of American entertainment."
             }
         ]
-    };
-});
+    }
+]
