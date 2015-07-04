@@ -7,15 +7,17 @@
         <div id="editor" contenteditable></div>
     </div>
     <div class="pane right">
-        <input type="file" id="file-input" onchange={ onFileOpen }/>
+        <input type="file" id="file-input" onchange={ onFileOpen } />
+        <button onclick={ onFileSave } >Save file to desktop</button>
     </div>
 
 
     <script>
+        var _root = this;
+
         // ====================================================================
         // Lifecycle
         // ====================================================================
-        var _root = this;
         _root.on('mount', function() {
             showRevision(_revisions[0]);
         });
@@ -46,6 +48,14 @@
             };
             reader.readAsText(file);
         };
+
+        _root.onFileSave = function(e) {
+            var a = document.createElement('a');
+            var file = new Blob([JSON.stringify(_revisions)], {type: 'text/json'});
+            a.href = URL.createObjectURL(file);
+            a.download = 'your-story.json';
+            a.click();
+        }
 
 
         // ====================================================================
