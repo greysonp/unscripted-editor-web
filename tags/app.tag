@@ -1,19 +1,57 @@
 <app>
 
     <div class="pane left">
-        <revision each={revision in revisions} revision={ revision } onclick={ parent.onRevisionSelected } ></revision>
+        <revision each={revision in _revisions} revision={ revision } onclick={ parent.onRevisionSelected } ></revision>
     </div>
     <div class="pane center">
-        <div id="editor"></div>
+        <div id="editor" contenteditable></div>
     </div>
     <div class="pane right">
-        <div>3</div>
+        <input type="file" id="file-input" onchange={ onFileOpen }/>
     </div>
 
 
     <script>
-        this.onRevisionSelected = function(e) {
-            var revision = e.item.revision;
+        // ====================================================================
+        // Lifecycle
+        // ====================================================================
+        var _root = this;
+        _root.on('mount', function() {
+            showRevision(_revisions[0]);
+        });
+
+        // ====================================================================
+        // Listeners
+        // ====================================================================
+        _root.onRevisionSelected = function(e) {
+            showRevision(e.item.revision);
+        };
+
+        _root.onFileOpen = function(e) {
+            var file = e.target.files[0];
+            if (!file) {
+                console.warn('File picker was given nothing.');
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var contents = e.target.result;
+                try {
+                    _revisions = JSON.parse(e.target.result);
+                    _root.update();
+                    showRevision(_revisions[0]);
+                } catch (e) {
+                    console.error('Imported file contained invalid JSON: ' + e);
+                }
+            };
+            reader.readAsText(file);
+        };
+
+
+        // ====================================================================
+        // Helpers
+        // ====================================================================
+        function showRevision(revision) {
             getEditor().innerHTML = revisionPartsToHtml(revision.parts);
             addEditorListeners();
         }

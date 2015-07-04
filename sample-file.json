@@ -1,4 +1,4 @@
-var _revisions = [
+[
     {
         "title": "greyson-bangor",
         "parts": [
@@ -21,7 +21,7 @@ var _revisions = [
             },
             {
                 "type": "text",
-                "text": " named Greyson. He was from "
+                "text": " named Peter Parker. He was from "
             },
             {
                 "type": "option",
